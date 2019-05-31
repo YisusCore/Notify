@@ -29,7 +29,11 @@
                 options.body = text;
             }
 
-            new Notification(title, options);
+            var notificacion = new Notification(title, options);
+            
+            if (typeof options.onclick !== 'undefined') {
+                notificacion.onclick = options.onclick;
+            }
         };
 
         var Toaster = function JSwal(title, text, options) {
